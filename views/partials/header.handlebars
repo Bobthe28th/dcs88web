@@ -1,0 +1,9 @@
+<header>
+    {{#unless home}}
+    <a href="/">Home</a>
+    {{else if user}}
+    <a class="log" href="/logout">Logout</a>
+    {{else}}
+    <a class="log" href="/login">Login</a>
+    {{/unless}}
+</header>

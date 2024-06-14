@@ -1,0 +1,17 @@
+<main>
+    <section>
+        <h2>Login</h2>
+        <form method="post" action="/login">
+            <fieldset class="form">
+                <div class="formfield">
+                    <label>Password Code</label>
+                    <input type="text" name="pass" maxlength="4" pattern="[0-9]{4}" placeholder="####" required>
+                </div>
+                {{#if passerror}}
+                <p class="error" id="passError">Error: {{passerror}}</p>
+                {{/if}}
+            </fieldset>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+</main>
