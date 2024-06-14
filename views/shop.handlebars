@@ -1,0 +1,11 @@
+<main>
+    <section>
+        <h2>Vendor Page</h2>
+        {{#each items}}
+        <p>{{this.name}} x{{this.count}}</p>
+        {{#if ../user}}
+        <button>Buy</button>
+        {{/if}}
+        {{/each}}
+    </section>
+</main>
