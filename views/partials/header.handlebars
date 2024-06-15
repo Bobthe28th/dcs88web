@@ -1,9 +1,29 @@
 <header>
-    {{#unless home}}
-    <a href="/">Home</a>
-    {{else if user}}
-    <a class="log" href="/logout">Logout</a>
+    <div class="head">
+        {{#unless home}}
+        {{#if user}}
+        <p class="bal">Balance: ${{bal}}</p>
+        {{/if}}
+        <a href="/">Home</a>
+        {{else if user}}
+        <a href="/logout">Logout</a>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/unless}}
+    </div>
+    {{#if home}}
+    <div class="hl">
+        <div class="homelines">
+            <div class="homeline1"></div>
+            <div class="homeline2"></div>
+            <div class="homeline3"></div>
+        </div>
+    </div>
     {{else}}
-    <a class="log" href="/login">Login</a>
-    {{/unless}}
+    <div class="lines">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    {{/if}}
 </header>

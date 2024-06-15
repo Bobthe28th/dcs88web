@@ -43,7 +43,7 @@ app.get('/shop', (req, res) => {
     if (req.cookies.user) {
         con.query("SELECT * FROM users WHERE pass = ?", [req.cookies.user], async function(err, result) {
             if (result.length > 0) {
-                res.render('shop', { items: require("../shop.json"), user: req.cookies.user });
+                res.render('shop', { items: require("../shop.json"), user: req.cookies.user, bal: result[0].money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") });
             } else res.render('shop', { items: require("../shop.json") });
         });
     } else res.render('shop', { items: require("../shop.json") });
@@ -77,7 +77,7 @@ app.get('/items', (req, res) => {
     if (req.cookies.user) {
         con.query("SELECT * FROM users WHERE pass = ?", [req.cookies.user], async function(err, result) {
             if (result.length > 0) {
-                res.render('items', { items: result[0].items });
+                res.render('items', { items: result[0].items, user: req.cookies.user, bal: result[0].money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") });
             } else res.redirect("/login");
         });
     } else res.redirect("/login");

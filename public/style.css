@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+:root {
+    --1: #960502;
+    --2: #fb0f05;
+    --3: #dd6766;
+    --4: #212121;
+    --5: #323232;
+}
+
+body {
+    background-color: var(--4);
+    color: var(--2);
+    font-size: 1.5vw;
+    font-family: "Lexend", sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+main {padding: 2em;}
+
+a {
+    text-decoration: none;
+    color: var(--2);
+}
+
+a:hover {
+    color: var(--3);
+}
+
+header a {
+    color: var(--2);
+    float: right;
+    font-size: 3em;
+    font-style: italic;
+    margin: 0 0.5em 0.2em 0;
+    display: block;
+}
+
+.head {
+    position: relative;
+    width: 100%;
+    height: 3em;
+}
+
+.bal {
+    float: left;
+    position: absolute;
+    bottom: 0;
+    font-size: 1.5em;
+    margin: 0 0 0 1em;
+    color: var(--1);
+    font-style: italic;
+}
+
+.hometabs {
+    padding: 5% 0 0 10%;
+    margin: 0;
+    display: grid;
+    grid-template-rows: 20% 20% 20%;
+    row-gap: 50%;
+}
+
+.hometab {
+    display: block;
+    color: var(--2);
+    font-size: 3em;
+    font-style: italic;
+    width: fit-content;
+    height: fit-content;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+footer p {
+    margin: 0;
+}
+
+.lines {
+    width: 100%;
+    display: block;
+    clear: both;
+}
+
+.lines div {
+    height: 0.5em;
+    margin-top: 1em;
+}
+
+.line1 {
+    background-color: var(--1);
+}
+
+.line2 {
+    background-color: var(--2);
+    width: 85%;
+}
+
+.line3 {
+    background-color: var(--3);
+    width: 75%;
+}
+
+.hl {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    clear: both;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.homelines {
+    width: 200%;
+    display: block;
+    position: absolute;
+    right: -50%;
+    clear: both;
+    rotate: 30deg;
+    overflow: hidden;
+}
+
+.homelines div {
+    height: 0.75em;
+    margin-top: 1em;
+}
+
+.homeline1 {
+    background-color: var(--3);
+}
+
+.homeline2 {
+    background-color: var(--2);
+}
+
+.homeline3 {
+    background-color: var(--1);
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--3);
+}
