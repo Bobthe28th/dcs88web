@@ -2,10 +2,39 @@
     <section>
         <h2>Vendor Page</h2>
         {{#each items}}
-        <p>{{this.name}} x{{this.count}}</p>
-        {{#if ../user}}
-        <button>Buy</button>
-        {{/if}}
+        <div class="itemdisplay">
+            {{#if this.count}}
+                <img class="itemimg" src="/images/weapons/{{this.id}}.png">
+            {{else}}
+                <p class="outofstocktext">Out of Stock</p>
+                <img class="itemimg out" src="/images/weapons/{{this.id}}.png">
+            {{/if}}
+            <div class="iteminfo">
+                {{#if this.count}}
+                    <p class="itemname">{{this.name}}</p>
+                {{else}}
+                    <p class="itemname outofstock">{{this.name}}</p>
+                {{/if}}
+                <p class="itemcost">${{this.cost}}</p>
+                <p class="itemcount">{{this.count}} Left in stock</p>
+            </div>
+            {{#if ../user}}
+            <div class="purchasebox">
+                <div class="quantityselector">
+                    {{#if this.count}}
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-</button>
+                    <input class="quantity" min="1" max="{{this.count}}" name="quantity" value="1" type="number" oninput="checkValue(this);">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</button>
+                    {{else}}
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus" disabled>-</button>
+                    <input class="quantity" min="0" max="{{this.count}}" name="quantity" value="0" type="number" oninput="checkValue(this);" disabled>
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus" disabled>+</button>
+                    {{/if}}
+                </div>
+                <button class="purchase" itemid="{{this.id}}">Purchase</button>
+            </div>
+            {{/if}}
+        </div>
         {{/each}}
     </section>
 </main>
