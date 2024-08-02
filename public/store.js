@@ -3,7 +3,7 @@ window.onload = function () {
     for (let i = 0; i < purchaseButtons.length; i++) {
         purchaseButtons[i].addEventListener('click', async function() {
             try {
-                let response = await (await fetch("http://localhost:28/buy", {
+                let response = await (await fetch("http://bobthe28th.me:28/buy", {
                     method: 'post',
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
